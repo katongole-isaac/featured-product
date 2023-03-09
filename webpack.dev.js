@@ -7,11 +7,11 @@ module.exports = merge(webpackConfig, {
   devServer: {
     static: {
       directory: path.join(__dirname, "public/"),
-      publicPath: `/`,
+      publicPath: "/",
     },
     hot: true, //HMR
     port: 3001,
     open: true, // open the default browser on start
-    histroyApiFallback: true,
+    historyApiFallback: true,
   },
 });

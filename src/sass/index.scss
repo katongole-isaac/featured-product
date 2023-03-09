@@ -1,5 +1,7 @@
-$color :  palevioletred;
+@import "./base/reset";
 
-.text-pink {
-    color: $color;
-}
+//product styles
+@import "./modules/product.scss";
+
+//navbar
+@import "./modules/navbar.scss";
