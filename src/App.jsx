@@ -13,7 +13,7 @@ import { useRef, useState } from "react";
 
 function App() {
   const { data, isLoading, error } = useFetch(BASE_URL);
-  const [cartSidebar, setCartSideBar] = useState(true);
+  const [cartSidebar, setCartSideBar] = useState(false);
 
   const cartBtnRef = useRef();
 
