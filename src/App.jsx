@@ -7,17 +7,13 @@ import { shoppingCartReducer } from "./utils/shoppingReducer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./sass/index.scss";
 import "./app.css";
+import ErrorPage from "./components/Error";
 
 function App() {
   const { data, isLoading, error } = useFetch(BASE_URL);
   const [shoppingCart, dispatch] = useImmerReducer(shoppingCartReducer, []);
 
-  // const [shoppingCart , setShoppingCart ] =
-  // isLoading = true;
-  // if (isLoading) return <>isLoading </>;
-  // if (error) return <>Error</>;
-
-  console.log("shopCart", shoppingCart);
+  if (error?.message) return <ErrorPage msg={error?.message} />;
 
   return (
     <>
