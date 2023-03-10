@@ -12,7 +12,7 @@
   },
   "keywords": [],
   "author": "",
-  "homepage": "https://katongole-isaac.github.io/notifications-page/featured-product/",
+  "homepage": "https://katongole-isaac.github.io/featured-product/",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.19.3",
