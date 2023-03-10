@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ErrorPage() {
   return (
-    <div className="container border border-primary vh-100 p-0 ">
+    <div className="container vh-100 p-0 ">
       <div className="d-flex flex-column error p-0 ">
         <span class="material-symbols-outlined">error</span>
         <h3 className="display-5">Oops Something went Wrong</h3>
