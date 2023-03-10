@@ -3,9 +3,25 @@
   color: #293241;
 }
 
+@mixin cart($right: 0) {
+  min-width: 350px;
+  max-width: 380px;
+  right: $right;
+}
+
 .cart-badge {
   top: -10px;
   right: -15px;
   font-weight: 500;
   font-size: 15px !important;
+}
+
+.cart-open {
+  z-index: 10;
+  @include cart;
+  transition: right 0.3s;
+}
+
+.cart-close {
+  @include cart($right: -100%);
 }

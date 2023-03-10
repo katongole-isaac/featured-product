@@ -8,9 +8,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./sass/index.scss";
 import "./app.css";
 import ErrorPage from "./components/Error";
+import ShoppingCartPage from "./components/shoppingCartPage";
+import { useRef, useState } from "react";
 
 function App() {
   const { data, isLoading, error } = useFetch(BASE_URL);
+  const [cartSidebar, setCartSideBar] = useState(true);
+
+  const cartBtnRef = useRef();
+
   const [shoppingCart, dispatch] = useImmerReducer(shoppingCartReducer, []);
 
   if (error?.message) return <ErrorPage msg={error?.message} />;
@@ -18,7 +24,17 @@ function App() {
   return (
     <>
       <div className="container-fluid w-100  p-0 ">
-        <Navbar shoppingCartLength={shoppingCart.length} />
+        <ShoppingCartPage
+          cartSidebar={cartSidebar}
+          setCartSidebar={setCartSideBar}
+          cart={shoppingCart}
+          dispatch={dispatch}
+        />
+        <Navbar
+          shoppingCartLength={shoppingCart.length}
+          setCartSideBar={setCartSideBar}
+          ref={cartBtnRef}
+        />
         <div className="container w-100 mt-2 ">
           {isLoading && <Loading />}
 
